@@ -9,7 +9,9 @@ class Driver {
     store.drivers.push(this);
   }
   trips(){
-    return store.trips.filte(trip => trip.driverId === this.id)
+    return store.trips.filte(function (trip) {
+      return trip.driverId === this.id
+    })
   }
   passengers(){
     return this.trip().map(trip => trip.passenger)
