@@ -11,7 +11,7 @@ class Driver {
   trips(){
     return store.trips.filte(function (trip) {
       return trip.driverId === this.id
-    })
+    }.bind(this))
   }
   passengers(){
     return this.trip().map(function (trip) {
@@ -31,7 +31,7 @@ class Passenger {
   }
   trips(){
     return store.trips.filte(function (trip){
-      return trip.driverId === this.id
+      return trip.passengerId === this.id
     })
   }
   drovers(){
