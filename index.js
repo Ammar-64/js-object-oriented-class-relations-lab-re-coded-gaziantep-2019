@@ -26,7 +26,7 @@ class Passenger {
     store.passengers.push(this);
   }
   trips(){
-    return store.trips.filte(function (trip){ 
+    return store.trips.filte(function (trip){
       return trip.driverId === this.id
     })
   }
